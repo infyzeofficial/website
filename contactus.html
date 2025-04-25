@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infyze - Contact Us</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Body and Background */
+        body { 
+            background: url("blankbg.jpg"); 
+            background-size: cover; 
+            color: #000;
+            line-height: 1.6;
+        }
+
+    
+        header { 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; 
+            padding: 20px;
+            z-index: 1000; 
+        }
+
+        header .navbar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        .navbar .logo { 
+            font-size: 65px; 
+            font-weight: 600; 
+        }
+
+        .navbar .logo span { 
+            color: #dd957f; 
+        }
+
+        .navbar .menu-links { 
+            display: flex; 
+            gap: 40px;
+        }
+
+        .navbar a { 
+            color: #000; 
+            font-size: 27px;
+            text-decoration: none;
+            transition: 0.2s ease; 
+        }
+
+        .navbar a:hover { 
+            color: #dd957f; 
+            border-bottom: 2px solid #dd957f;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 180px auto; 
+            padding: 20px;
+            background: #f4cfc7;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 35px;
+            text-align: center;
+            color: #000;
+        }
+
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color:#ffc98b;
+            border: none;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e6c660;
+        }
+
+        .error {
+            color: rgba(255, 0, 0, 0.586);
+            font-size: 14px;
+            display: none;
+        }
+        
+           .center-content {
+            text-align: center;  
+            margin-top: 30px;    
+        }
+        a {
+            color: #dd957f;  
+            text-decoration: none;
+            
+        }
+        a:hover {
+            color: #000000;  
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: #fff;
+            position: relative;
+            bottom: 10;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">Infyze<span>.</span></a>
+            <ul class="menu-links">
+                <a href="index.html"> Home </a>
+                <a href="aboutus.html"> About us </a>
+                
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        
+
+        <form action="https://formspree.io/f/xqakwvlg" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+            <div class="center-content">
+                <p>For any inquiries, you can also email directly at: 
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=infyzeofficial@gmail.com" target="_blank">
+                        <u><strong>infyzeofficial@gmail.com</strong></u>
+                    </a>                 
+        </form>
+            </div>
+            </a>
+            </center>
+        <center><img src="image (12).png"style="width: 50px; height: auto;">
+        </center>
+        </p>      
+    </div>
+        
+        </form>
+    </div>
+
+  
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            let isValid = true;
+
+           
+            document.getElementById("name-error").style.display = "none";
+            document.getElementById("email-error").style.display = "none";
+            document.getElementById("message-error").style.display = "none";
+
+            
+            if (name.trim() === "") {
+                document.getElementById("name-error").style.display = "block";
+                isValid = false;
+            }
+
+      
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("email-error").style.display = "block";
+                isValid = false;
+            }
+
+          
+            if (message.trim() === "") {
+                document.getElementById("message-error").style.display = "block";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+ 
+    </script>
+
+<footer>
+    <p>&copy; 2024-2025 Infyze. All rights reserved.</p>
+    
+</footer>
+
+</body>
+</html>
+</body>
+</html>
